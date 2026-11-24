@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f2fbf6" />
+  <title>Grama Vaani | Digital Pathway to Rural Progress</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Grama Vaani home">
+      <span class="brand-mark">VVIT</span><span>Grama Vaani</span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    <nav id="mainNav" class="main-nav">
+      <a href="#home">Home</a>
+      <a href="#submit">Submit Grievance</a>
+      <a href="#track">Track Grievance</a>
+      <a href="#login">Panchayat Login</a>
+      <a href="#feedback">Feedback</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1>Grama Vaani</h1>
+        <h2>Digital Pathway to Rural Progress</h2>
+        <p>A Digital Communication and Grievance Redressal System connecting Gram Panchayats with villagers, ensuring transparent governance and timely issue resolution.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#submit">＋ Submit Grievance</a>
+          <a class="button outline" href="#track">⌕ Track Status</a>
+        </div>
+        <div class="governance-card">
+          <h3>Digital Governance</h3>
+          <p>Empowering rural communities</p>
+          <a class="button primary small" href="#login">▦ Panchayat Login</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section why">
+      <h2 class="section-title">Why Grama Vaani?</h2>
+      <div class="feature-grid">
+        <article class="feature-card"><div class="feature-icon">⚑</div><h3>Digital Communication</h3><p>Bridge the gap between Gram Panchayats and villagers through reliable digital channels</p></article>
+        <article class="feature-card"><div class="feature-icon">⌁</div><h3>Transparent Tracking</h3><p>Track submitted grievances and view status updates for better transparency</p></article>
+        <article class="feature-card"><div class="feature-icon">▯</div><h3>Mobile Access</h3><p>Accessible on different devices, helping more villagers use digital services</p></article>
+      </div>
+    </section>
+
+    <section id="submit" class="section tinted">
+      <h2 class="section-title">Submit Your Grievance</h2>
+      <p class="section-lead">Help us serve you better by reporting your concerns</p>
+      <form id="grievanceForm" class="form-card">
+        <label>Full Name *<input name="name" required autocomplete="name" /></label>
+        <label>Contact Number *<input name="phone" required inputmode="tel" pattern="[0-9+() -]{8,18}" /></label>
+        <label>Issue Category *
+          <select name="category" required><option value="">Select Category</option><option>Water Supply</option><option>Roads</option><option>Street Lights</option><option>Sanitation</option><option>Electricity</option><option>Other</option></select>
+        </label>
+        <label>Issue Description *<textarea name="description" required rows="5" placeholder="Please describe your issue in detail..."></textarea></label>
+        <label>Upload Image (Optional)<input name="image" type="file" accept="image/*" /></label>
+        <button class="button primary" type="submit">➤ Submit Grievance</button>
+        <p class="form-note">Demo version: submissions are saved only in this browser.</p>
+        <div id="grievanceMessage" class="message" role="status"></div>
+      </form>
+    </section>
+
+    <section id="track" class="section">
+      <h2 class="section-title">Track Grievance</h2>
+      <p class="section-lead">Enter your grievance reference number to check its status</p>
+      <form id="trackForm" class="form-card compact">
+        <label>Grievance ID<input name="grievanceId" required placeholder="Example: GV-123456" /></label>
+        <button class="button primary" type="submit">Search Status</button>
+        <div id="trackResult" class="message" role="status"></div>
+      </form>
+    </section>
+
+    <section id="login" class="section tinted">
+      <h2 class="section-title">Panchayat Login</h2>
+      <p class="section-lead">Authorized access for Panchayat representatives</p>
+      <form id="loginForm" class="form-card compact">
+        <label>Username<input name="username" required autocomplete="username" /></label>
+        <label>Password<input name="password" type="password" required autocomplete="current-password" /></label>
+        <button class="button primary" type="submit">Login</button>
+        <div id="loginMessage" class="message" role="status"></div>
+        <p class="form-note">Demo interface only. Real authentication and a secure server are not connected.</p>
+      </form>
+      <div id="dashboard" class="form-card hidden">
+        <h3>Panchayat Dashboard (Demo)</h3>
+        <p>Grievances saved in this browser:</p>
+        <div id="dashboardList"></div>
+        <button class="button outline" id="logoutButton" type="button">Logout</button>
+      </div>
+    </section>
+
+    <section id="feedback" class="section">
+      <h2 class="section-title">Share Your Feedback</h2>
+      <p class="section-lead">Your suggestions help us improve the service</p>
+      <form id="feedbackForm" class="form-card compact">
+        <label>Your Name<input name="name" /></label>
+        <label>Rating<select name="rating" required><option value="">Select rating</option><option>Excellent</option><option>Good</option><option>Average</option><option>Needs Improvement</option></select></label>
+        <label>Your Feedback<textarea name="feedback" rows="4" required></textarea></label>
+        <button class="button primary" type="submit">Submit Feedback</button>
+        <div id="feedbackMessage" class="message" role="status"></div>
+      </form>
+    </section>
+
+    <section id="about" class="section tinted">
+      <h2 class="section-title">About Our Project</h2>
+      <p class="section-lead">Bridging the digital divide in rural governance</p>
+      <div class="about-card">
+        <h3>Project Overview</h3>
+        <p>Grama Vaani aims to address the communication gap between Gram Panchayats and villagers by providing a digital platform for grievance submission, tracking, and resolution. The goal is to support transparent governance and timely responses to community needs.</p>
+        <h3>Key Features</h3>
+        <ul><li>Online grievance submission</li><li>Grievance reference number and status lookup</li><li>Panchayat-facing dashboard concept</li><li>Feedback collection</li><li>Responsive mobile-friendly layout</li></ul>
+        <h3>Project Contributor</h3>
+        <div class="member-card"><div class="member-avatar">BT</div><div><strong>Banavath Naga Thanmayei</strong><span>Project Contributor</span></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Grama Vaani. All rights reserved.</p>
+    <p>Digital Pathway to Rural Progress</p>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
